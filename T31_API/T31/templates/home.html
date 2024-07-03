@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include "blocks/head.html" %}
+<body>
+    {% include "blocks/header.html" %}
+    <main>
+        <script src="/static/js/control.js"></script>
+        <div class="content">
+            <h2>Real-time Object Detection</h2>
+            <img src="{% url 'video_feed' %}" width="800"/>
+            <div class="controls">
+                <button onclick="controlFeed('pause')">Pause</button>
+                <button onclick="controlFeed('resume')">Resume</button>
+                <button onclick="controlFeed('reload')">Reload</button>
+            </div>
+        </div>
+        {% include "blocks/identified.html" %}
+    </main>
+    {% include "blocks/footer.html" %}
+    <script src="/static/js/items_update.js"></script>
+</body>
+</html>
